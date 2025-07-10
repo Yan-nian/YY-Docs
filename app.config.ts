@@ -1,8 +1,8 @@
 export default defineAppConfig({
   shadcnDocs: {
     site: {
-      name: 'shadcn-docs-nuxt',
-      description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
+      name: '二十五时的睡眠文档',
+      description: '二十五时睡眠项目的官方文档站点，提供详细的使用指南和配置说明。',
     },
     theme: {
       customizable: true,
@@ -10,7 +10,7 @@ export default defineAppConfig({
       radius: 0.5,
     },
     header: {
-      title: 'shadcn-docs-starter',
+      title: '二十五时的睡眠',
       showTitle: true,
       darkModeToggle: true,
       languageSwitcher: {
@@ -22,10 +22,19 @@ export default defineAppConfig({
         light: '/logo.svg',
         dark: '/logo-dark.svg',
       },
-      nav: [],
+      nav: [
+        {
+          title: 'Home',
+          to: '/'
+        },
+        {
+          title: 'Docs',
+          to: '/docs/getting-started/introduction'
+        }
+      ],
       links: [{
         icon: 'lucide:github',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+        to: 'https://github.com/Yan-nian/twenty-five-hour-sleep',
         target: '_blank',
       }],
     },
@@ -38,10 +47,10 @@ export default defineAppConfig({
       showTitle: true,
     },
     footer: {
-      credits: 'Copyright © 2024',
+      credits: 'Copyright © 2024 二十五时的睡眠',
       links: [{
         icon: 'lucide:github',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+        to: 'https://github.com/Yan-nian/twenty-five-hour-sleep',
         target: '_blank',
       }],
     },
@@ -50,12 +59,12 @@ export default defineAppConfig({
       links: [{
         title: 'Star on GitHub',
         icon: 'lucide:star',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+        to: 'https://github.com/Yan-nian/twenty-five-hour-sleep',
         target: '_blank',
       }, {
         title: 'Create Issues',
         icon: 'lucide:circle-dot',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
+        to: 'https://github.com/Yan-nian/twenty-five-hour-sleep/issues',
         target: '_blank',
       }],
     },

@@ -1,31 +1,31 @@
 ---
-title: Home
+title: 首页
 navigation: false
 ---
 
 ::hero
 ---
 announcement:
-  title: 'Release v1'
-  icon: '🎉'
-  to: https://shadcn-docs-nuxt.vercel.app/blog/v1
-  target: _blank
+  title: '二十五时的睡眠项目'
+  icon: '😴'
+  to: /docs/getting-started/introduction
+  target: _self
 actions:
-  - name: Documentation
-    to: https://shadcn-docs-nuxt.vercel.app/getting-started/introduction
-  - name: GitHub
+  - name: Docs
+    to: /docs/getting-started/introduction
+  - name: 配置指南
     variant: outline
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
-    leftIcon: 'lucide:github'
+    to: /docs/guide/configuration
+    leftIcon: 'lucide:settings'
 ---
 
 #title
-Welcome to shadcn-docs-nuxt
+二十五时的睡眠文档
 
 #description
-Beautifully designed Nuxt Content template built with shadcn-vue. :br Customizable. Compatible. Open Source.
+探索二十五时的睡眠的奥秘
 ::
 
 ::div{class="border rounded-lg shadow-md"}
-  :iframe{src="https://shadcn-docs-nuxt.vercel.app/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
+  :iframe{src="/docs/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
 ::
