@@ -79,7 +79,7 @@ export default defineAppConfig({
       links: [
         {
           icon: 'lucide:github',
-          to: 'https://github.com/your-username/your-repo',
+          to: 'https://github.com/Yan-nian/YY-Docs',
           target: '_blank',
         }
       ]
@@ -125,7 +125,7 @@ export default defineAppConfig({
         {
           title: 'GitHub',
           icon: 'lucide:github',
-          to: 'https://github.com/your-username/your-repo',
+          to: 'https://github.com/Yan-nian/YY-Docs',
           target: '_blank',
         }
       ]
@@ -157,7 +157,7 @@ export default defineAppConfig({
       links: [
         {
           icon: 'lucide:github',
-          to: 'https://github.com/your-username/your-repo',
+          to: 'https://github.com/Yan-nian/YY-Docs',
           target: '_blank',
         }
       ]
@@ -196,7 +196,7 @@ export default defineAppConfig({
       links: [
         {
           icon: 'lucide:github',
-          to: 'https://github.com/your-username/your-repo',
+          to: 'https://github.com/Yan-nian/YY-Docs',
           target: '_blank',
         }
       ]
@@ -214,7 +214,7 @@ export default defineAppConfig({
       links: [
         {
           icon: 'lucide:github',
-          to: 'https://github.com/your-username/your-repo',
+          to: 'https://github.com/Yan-nian/YY-Docs',
           target: '_blank',
         }
       ]

@@ -1,0 +1,734 @@
+---
+title: 组件使用教程
+description: shadcn-docs-nuxt 中所有可用组件的详细使用指南和示例。
+---
+
+# 组件使用教程
+
+本指南将详细介绍 shadcn-docs-nuxt 中所有可用的组件及其使用方法。这些组件基于 MDC (Markdown Components) 语法，可以直接在 Markdown 文件中使用。
+
+## 📋 目录
+
+- [文档组件](#文档组件)
+- [页面组件](#页面组件)
+- [交互组件](#交互组件)
+- [媒体组件](#媒体组件)
+- [工具组件](#工具组件)
+
+## 文档组件
+
+### Alert 提示框
+
+用于显示重要信息、警告或提示的组件。
+
+#### 基本用法
+
+```markdown
+::alert{type="info"}
+这是一个信息提示。
+::
+
+::alert{type="warning"}
+这是一个警告提示。
+::
+
+::alert{type="danger"}
+这是一个危险提示。
+::
+
+::alert{type="success"}
+这是一个成功提示。
+::
+```
+
+#### 自定义图标
+
+```markdown
+::alert{type="example" icon="lucide:test-tube"}
+一个带有 **自定义图标** 的示例提示，包含 `代码` 和 [链接](/)。
+::
+```
+
+**效果预览：**
+
+::alert{type="info"}
+这是一个信息提示框，用于显示一般性信息。
+::
+
+::alert{type="warning"}
+这是一个警告提示框，用于显示需要注意的内容。
+::
+
+### Card 卡片
+
+用于展示结构化内容的容器组件。
+
+```markdown
+::card
+---
+title: 卡片标题
+icon: lucide:star
+---
+卡片内容描述，支持 **Markdown** 格式。
+::
+```
+
+**效果预览：**
+
+::card
+---
+title: 示例卡片
+icon: lucide:lightbulb
+---
+这是一个示例卡片，展示了如何使用卡片组件来组织内容。
+::
+
+### Field 字段说明
+
+用于 API 文档或配置说明的字段描述组件。
+
+```markdown
+::field{name="字段名" type="string" defaultValue="'默认值'" required}
+字段的 _描述_ 可以包含完整的 **Markdown** 支持。
+::
+```
+
+**效果预览：**
+
+::field{name="title" type="string" defaultValue="'文档标题'" required}
+页面的标题，将显示在浏览器标签页和页面顶部。
+::
+
+### Code Group 代码组
+
+用于展示多个相关代码文件的组件。
+
+```markdown
+::code-group
+
+```vue [app.vue]
+<template>
+  <div>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
+</template>
+```
+
+```vue [pages/index.vue]
+<template>
+  <div>
+    <h1>欢迎来到首页</h1>
+    <AppAlert>
+      这是一个自动导入的组件
+    </AppAlert>
+  </div>
+</template>
+```
+
+::
+```
+
+### Steps 步骤
+
+用于展示操作步骤或流程的组件。
+
+```markdown
+::steps
+
+### 第一步：安装依赖
+
+运行以下命令安装项目依赖：
+
+```bash
+pnpm install
+```
+
+### 第二步：启动开发服务器
+
+启动本地开发服务器：
+
+```bash
+pnpm dev
+```
+
+### 第三步：访问应用
+
+在浏览器中打开 `http://localhost:3000`
+
+::
+```
+
+### File Tree 文件树
+
+用于展示项目文件结构的组件。
+
+```markdown
+::file-tree
+---
+tree:
+  - app:
+    - components:
+      - Header.vue
+      - Footer.vue
+    - composables:
+      - useErrorHandler.ts
+    - ^app.vue^ # 高亮显示
+  - docs:
+    - index.md
+---
+::
+```
+
+## 页面组件
+
+### Hero 英雄区块
+
+用于页面顶部的主要展示区域。
+
+```markdown
+::hero
+---
+announcement:
+  title: '发布 v1.0.0'
+  icon: 'lucide:party-popper'
+  to: /getting-started
+actions:
+  - name: 开始使用
+    to: /getting-started
+  - name: GitHub
+    variant: outline
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+    leftIcon: 'lucide:github'
+---
+
+#title
+轻松美观的 :br 文档模板
+
+#description
+基于 shadcn-vue 的精美 Nuxt Content 模板。:br 可定制、兼容性强、开源免费。
+::
+```
+
+### Hero Alt 替代英雄区块
+
+带有右侧内容区域的英雄组件。
+
+```markdown
+::hero-alt
+---
+announcement:
+  title: '介绍图表功能'
+  icon: 'lucide:pie-chart'
+  to: /getting-started
+actions:
+  - name: 开始使用
+    to: /getting-started
+  - name: GitHub
+    variant: ghost
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+mobileRight: 'top' # 'top' | 'bottom'
+---
+
+#title
+构建你的组件库
+
+#description
+精美设计的组件，可以直接复制粘贴到你的应用中。
+
+#right
+![logo](/logo.svg)
+::
+```
+
+## 交互组件
+
+### Tabs 标签页
+
+用于组织和切换不同内容的标签页组件。
+
+#### 基本标签页
+
+```markdown
+::tabs{variant="separate"}
+
+::div{label="安装"}
+```bash
+pnpm install shadcn-docs-nuxt
+```
+::
+
+::div{label="配置"}
+```typescript
+export default defineAppConfig({
+  shadcnDocs: {
+    // 配置选项
+  }
+})
+```
+::
+
+::div{label="使用"}
+```vue
+<template>
+  <div>
+    <!-- 你的内容 -->
+  </div>
+</template>
+```
+::
+
+::
+```
+
+#### 卡片样式标签页
+
+```markdown
+::tabs{variant="card"}
+
+::div{label="预览"}
+这是预览内容。
+::
+
+::div{label="代码"}
+```vue
+<template>
+  <div>示例代码</div>
+</template>
+```
+::
+
+::
+```
+
+#### 同步标签页
+
+```markdown
+::tabs{sync="package-manager"}
+
+::div{label="pnpm"}
+```bash
+pnpm install
+```
+::
+
+::div{label="npm"}
+```bash
+npm install
+```
+::
+
+::div{label="yarn"}
+```bash
+yarn install
+```
+::
+
+::
+```
+
+### Accordion 手风琴
+
+用于创建可折叠内容区域的组件。
+
+```markdown
+::accordion{default-value="first-item" collapsible}
+  ::accordion-item{value="first-item"}
+  #title
+  是否具有可访问性？
+
+  #content
+  是的。它遵循 WAI-ARIA 设计模式。
+  ::
+
+  ::accordion-item
+  #title
+  是否无样式？
+
+  #content
+  是的。默认情况下它是无样式的，让你可以自由控制外观和感觉。
+  ::
+  
+  :accordion-item{title="可以添加动画吗？" content="可以！你可以使用 transition 属性来配置动画。"}
+::
+```
+
+### Collapsible 折叠面板
+
+简单的折叠内容组件。
+
+```markdown
+::collapsible
+#title
+显示属性
+
+#content
+这是一个 **简单** 样式的折叠面板。
+::
+```
+
+## 媒体组件
+
+### Icon 图标
+
+用于显示各种图标的组件。
+
+#### 基本图标
+
+```markdown
+:icon{name="lucide:box"}
+:icon{name="vscode-icons:file-type-js-official"}
+:icon{name="vscode-icons:file-type-vue"}
+:icon{name="vscode-icons:file-type-nuxt" size="30"}
+```
+
+#### 智能图标
+
+自动识别图标类型（Iconify、Emoji、URL）。
+
+```markdown
+**Iconify 图标**
+:smart-icon{name="lucide:box"}
+:smart-icon{name="vscode-icons:file-type-js-official"}
+:smart-icon{name="vscode-icons:file-type-vue"}
+
+**Emoji**
+:smart-icon{name="😍"}
+:smart-icon{name="🚀"}
+:smart-icon{name="🎉" size=30}
+
+**URL**
+:smart-icon{name="/logo.svg"}
+:smart-icon{name="https://vueuse.org/favicon.svg" size=40}
+```
+
+### Code Snippet 代码片段
+
+用于显示外部文件代码的组件。
+
+#### 基本用法
+
+```markdown
+::code-snippet
+---
+file: /examples/file.vue
+language: vue
+---
+::
+```
+
+#### 显示特定行
+
+```markdown
+::code-snippet
+---
+file: /examples/file.vue
+language: vue
+start: 6
+offset: 4
+---
+::
+```
+
+## 工具组件
+
+### Button Link 按钮链接
+
+用于创建各种样式的链接按钮。
+
+```markdown
+::button-link{right-icon="lucide:arrow-up-right" to="/getting-started" target="_blank"}
+  开始使用
+::
+
+::button-link{left-icon="lucide:github" variant="outline" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
+  GitHub
+::
+
+::button-link{left-icon="lucide:ghost" variant="ghost" href="https://github.com/ZTL-UwU/shadcn-docs-nuxt" blank}
+  Ghost
+::
+```
+
+### Read More 阅读更多
+
+用于创建"阅读更多"链接的组件。
+
+```markdown
+:read-more{to="/getting-started/writing/markdown"}
+:read-more{title="Nuxt 官网" to="https://nuxt.com/"}
+:read-more{to="https://nuxt.com/"}
+:read-more{icon="lucide:link" to="https://nuxt.com/"}
+```
+
+### Package Manager 包管理器
+
+用于显示包管理器命令的组件。
+
+#### 安装包
+
+```markdown
+:pm-install{name="shadcn-docs-nuxt"}
+:pm-install{name="shadcn-docs-nuxt" save-dev}
+:pm-install
+:pm-install{name="-g nuxi@latest"}
+```
+
+#### 运行脚本
+
+```markdown
+:pm-run{script="dev"}
+:pm-run{script="build --watch -o"}
+```
+
+#### 执行命令
+
+```markdown
+:pm-x{command="nuxi@latest init <project-name>"}
+```
+
+### Shortcut 快捷键
+
+用于显示键盘快捷键的组件。
+
+```markdown
+:shortcut{value="Ctrl+C"}
+:shortcut{value="Cmd+V" size="md"}
+```
+
+### Stack 堆叠布局
+
+用于垂直堆叠多个元素的布局组件。
+
+```markdown
+::stack
+  ::div{class="p-6 text-3xl font-bold"}
+  ✨ 介绍 Inspira UI
+  ::
+  
+  ```vue
+  <template>
+    <RadiantText
+      class="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 dark:hover:text-neutral-400"
+      :duration="5"
+    >
+      <span class="text-3xl font-bold">✨ 介绍 Inspira UI</span>
+    </RadiantText>
+  </template>
+  ```
+  
+  :pm-install{name="@inspira-ui/plugins" save-dev}
+  :read-more{title="Inspira UI 文档" to="https://inspira-ui.com/components/radiant-text"}
+  
+  ::card
+  ---
+  title: 命令
+  icon: lucide:square-terminal
+  ---
+  Nuxt CLI 命令列表，用于初始化、分析、构建和预览你的应用。
+  ::
+::
+```
+
+## 数学公式
+
+### LaTeX 支持
+
+shadcn-docs-nuxt 支持 LaTeX 数学公式渲染。
+
+#### 行内公式
+
+```markdown
+$E = mc^2$
+```
+
+#### 块级公式
+
+```markdown
+$$
+E = mc^2
+$$
+```
+
+#### 数学代码块
+
+```markdown
+```math
+E = mc^2
+```
+```
+
+**效果预览：**
+
+行内公式：$E = mc^2$
+
+块级公式：
+$$
+E = mc^2
+$$
+
+## 组件属性参考
+
+### Tabs 组件属性
+
+| 属性 | 类型 | 默认值 | 描述 |
+|------|------|--------|------|
+| `variant` | `'separate' \| 'card' \| 'line' \| 'combobox'` | `'separate'` | 标签页样式 |
+| `padded` | `boolean` | `true` | 是否添加内边距 |
+| `disableSearch` | `boolean` | `false` | 禁用搜索（combobox 变体） |
+| `searchPlaceholder` | `string` | `'Search Tab...'` | 搜索占位符 |
+| `searchEmpty` | `string` | `'No tab found.'` | 搜索为空时的提示 |
+| `sync` | `string` | - | 同步范围 |
+
+### Shortcut 组件属性
+
+| 属性 | 类型 | 默认值 | 描述 |
+|------|------|--------|------|
+| `value` | `string` | - | 快捷键文本 |
+| `size` | `'xs' \| 'sm' \| 'md'` | `'sm'` | 快捷键大小 |
+
+### Steps 组件属性
+
+| 属性 | 类型 | 默认值 | 描述 |
+|------|------|--------|------|
+| `level` | `number` | `3` | 标题级别（HTML heading 标签） |
+
+## 最佳实践
+
+### 1. 组件嵌套
+
+```markdown
+::card
+---
+title: 嵌套示例
+---
+
+::alert{type="info"}
+卡片内可以嵌套其他组件。
+::
+
+::tabs
+::div{label="代码"}
+```vue
+<template>
+  <div>示例代码</div>
+</template>
+```
+::
+::
+
+::
+```
+
+### 2. 响应式设计
+
+使用 Tailwind CSS 类名来实现响应式设计：
+
+```markdown
+::div{class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"}
+  ::card{title="卡片 1"}
+  内容 1
+  ::
+  
+  ::card{title="卡片 2"}
+  内容 2
+  ::
+  
+  ::card{title="卡片 3"}
+  内容 3
+  ::
+::
+```
+
+### 3. 可访问性
+
+确保组件具有良好的可访问性：
+
+```markdown
+::button-link{to="/docs" aria-label="查看文档"}
+  文档
+::
+
+:icon{name="lucide:info" aria-label="信息图标"}
+```
+
+### 4. 性能优化
+
+- 避免在单个页面中使用过多复杂组件
+- 合理使用图标，避免加载过多不必要的图标
+- 对于大型代码片段，考虑使用 `code-snippet` 组件而不是直接嵌入
+
+## 故障排除
+
+### 常见问题
+
+1. **组件不显示**
+   - 检查 MDC 语法是否正确
+   - 确保组件名称拼写正确
+   - 验证属性格式是否符合要求
+
+2. **样式问题**
+   - 确保 Tailwind CSS 类名正确
+   - 检查是否有 CSS 冲突
+   - 验证主题配置是否正确
+
+3. **图标不显示**
+   - 确认图标名称正确
+   - 检查 Nuxt Icon 配置
+   - 验证图标集是否已安装
+
+### 调试技巧
+
+```markdown
+<!-- 使用注释来调试组件 -->
+<!-- ::card{title="测试卡片"} -->
+<!-- 这是测试内容 -->
+<!-- :: -->
+
+<!-- 简化组件来定位问题 -->
+::alert{type="info"}
+简单测试
+::
+```
+
+## 扩展组件
+
+如果需要自定义组件，可以在 `components/content/` 目录下创建新的 Vue 组件：
+
+```vue
+<!-- components/content/MyCustomComponent.vue -->
+<template>
+  <div class="my-custom-component">
+    <h3>{{ title }}</h3>
+    <slot />
+  </div>
+</template>
+
+<script setup>
+defineProps({
+  title: {
+    type: String,
+    default: '默认标题'
+  }
+})
+</script>
+
+<style scoped>
+.my-custom-component {
+  @apply p-4 border rounded-lg;
+}
+</style>
+```
+
+然后在 Markdown 中使用：
+
+```markdown
+::my-custom-component{title="自定义组件"}
+这是自定义组件的内容。
+::
+```
+
+---
+
+> 💡 **提示**: 这份组件教程涵盖了 shadcn-docs-nuxt 的所有主要组件。建议在实际使用中参考具体组件的文档，并根据项目需求进行定制。

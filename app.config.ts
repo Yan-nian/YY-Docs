@@ -30,11 +30,19 @@ export default defineAppConfig({
         {
           title: 'Docs',
           to: '/docs/getting-started/introduction'
+        },
+        {
+          title: 'Guide',
+          to: '/docs/guide'
+        },
+        {
+          title: 'Maintenance',
+          to: '/docs/maintenance/overview'
         }
       ],
       links: [{
         icon: 'lucide:github',
-        to: 'https://github.com/Yan-nian/twenty-five-hour-sleep',
+        to: 'https://github.com/Yan-nian/YY-Docs',
         target: '_blank',
       }],
     },
@@ -50,7 +58,7 @@ export default defineAppConfig({
       credits: 'Copyright © 2024 二十五时的睡眠',
       links: [{
         icon: 'lucide:github',
-        to: 'https://github.com/Yan-nian/twenty-five-hour-sleep',
+        to: 'https://github.com/Yan-nian/YY-Docs',
         target: '_blank',
       }],
     },
@@ -59,12 +67,12 @@ export default defineAppConfig({
       links: [{
         title: 'Star on GitHub',
         icon: 'lucide:star',
-        to: 'https://github.com/Yan-nian/twenty-five-hour-sleep',
+        to: 'https://github.com/Yan-nian/YY-Docs',
         target: '_blank',
       }, {
         title: 'Create Issues',
         icon: 'lucide:circle-dot',
-        to: 'https://github.com/Yan-nian/twenty-five-hour-sleep/issues',
+        to: 'https://github.com/Yan-nian/YY-Docs/issues',
         target: '_blank',
       }],
     },
