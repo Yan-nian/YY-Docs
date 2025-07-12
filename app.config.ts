@@ -25,16 +25,41 @@ export default defineAppConfig({
         light: '/logo.svg',
         dark: '/logo-dark.svg',
       },
-      nav: [
-        {
-          title: 'Home',
-          to: '/'
-        },
-        {
-          title: 'Docs',
-          to: '/getting-started/introduction'
-        }
-      ],
+      nav: [{
+        title: 'Docs',
+        links: [{
+          title: 'Getting Started',
+          to: '/getting-started',
+          description: '开始使用二十五时睡眠项目文档',
+          icon: 'lucide:rocket',
+        }, {
+          title: 'Guide',
+          to: '/guide',
+          description: '详细的使用指南和最佳实践',
+          icon: 'lucide:book-open',
+        }, {
+          title: 'API',
+          to: '/docs/api',
+          description: '探索配置选项和 API 接口',
+          target: '_self',
+          icon: 'lucide:code',
+        }],
+      }, {
+        title: 'Resources',
+        links: [{
+          title: 'GitHub',
+          to: 'https://github.com/Yan-nian/YY-Docs',
+          description: '查看源代码和贡献项目',
+          target: '_blank',
+          icon: 'lucide:github',
+        }, {
+          title: 'Issues',
+          to: 'https://github.com/Yan-nian/YY-Docs/issues',
+          description: '报告问题或提出建议',
+          target: '_blank',
+          icon: 'lucide:bug',
+        }],
+      }],
       links: [{
         icon: 'lucide:github',
         to: 'https://github.com/Yan-nian/YY-Docs',
