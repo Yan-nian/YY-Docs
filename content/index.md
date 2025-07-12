@@ -5,27 +5,22 @@ navigation: false
 
 ::hero
 ---
-announcement:
-  title: '二十五时的睡眠项目'
-  icon: '😴'
-  to: /docs/getting-started/introduction
-  target: _self
 actions:
-  - name: Docs
-    to: /docs/getting-started/introduction
-  - name: 配置指南
+  - name: 快速开始
+    to: /getting-started/introduction
+  - name: GitHub
     variant: outline
-    to: /docs/guide/configuration
-    leftIcon: 'lucide:settings'
+    to: https://github.com/your-username/YY-Docs
+    leftIcon: 'lucide:github'
 ---
 
 #title
-二十五时的睡眠文档
+简洁优雅的 :br 文档模板
 
 #description
-探索二十五时的睡眠的奥秘
+基于 Nuxt Content 和 shadcn-vue 构建的美观文档模板。
 ::
 
 ::div{class="border rounded-lg shadow-md"}
-  :iframe{src="/docs/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
+  :iframe{src="/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
 ::

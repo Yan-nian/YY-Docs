@@ -3,6 +3,9 @@ export default defineAppConfig({
     site: {
       name: '二十五时的睡眠文档',
       description: '二十五时睡眠项目的官方文档站点，提供详细的使用指南和配置说明。',
+      // ogImage: '/logo.svg', // 注释掉静态 OG 图片，让 ogImageComponent 为所有页面生成动态图片
+      ogImageComponent: 'ShadcnDocs',
+      ogImageColor: 'light', // or 'dark'
     },
     theme: {
       customizable: true,
@@ -29,15 +32,7 @@ export default defineAppConfig({
         },
         {
           title: 'Docs',
-          to: '/docs/getting-started/introduction'
-        },
-        {
-          title: 'Guide',
-          to: '/docs/guide'
-        },
-        {
-          title: 'Maintenance',
-          to: '/docs/maintenance/overview'
+          to: '/getting-started/introduction'
         }
       ],
       links: [{
@@ -49,6 +44,7 @@ export default defineAppConfig({
     aside: {
       useLevel: true,
       collapse: false,
+      folderStyle: true,
     },
     main: {
       breadCrumb: true,

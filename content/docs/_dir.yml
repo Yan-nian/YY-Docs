@@ -1,0 +1,3 @@
+title: shadcn-docs-nuxt文档
+icon: lucide:code-xml
+navigation.redirect: /docs/api/configuration/shadcn-docs
